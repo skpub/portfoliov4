@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { DesktopTab } from "@/components/desktop-tab";
 import { DeviceWrapper } from "@/components/device-wrapper";
-import { MobileShell } from "@/components/mobile-shell";
+import { MobileTab } from "@/components/mobile-tab";
 import { getDevice } from "@/lib/server-device";
 
 const geistSans = Geist({
@@ -16,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
 	title: {
 		default: "佐藤海音",
 		template: "%s | 佐藤海音",
@@ -41,9 +43,25 @@ export default async function RootLayout({
 			<body className="min-h-full flex flex-col">
 				<DeviceWrapper>
 					{device === "mobile" ? (
-						<MobileShell>{children}</MobileShell>
+						<div
+							className="flex flex-col min-h-screen"
+							style={{ backgroundColor: "var(--background)" }}
+						>
+							<main className="flex flex-col flex-1 overflow-x-hidden pb-[calc(8.5rem+env(safe-area-inset-bottom,0px))]">
+								{children}
+							</main>
+							<MobileTab />
+						</div>
 					) : (
-						children
+						<div
+							className="flex flex-col min-h-screen"
+							style={{ backgroundColor: "var(--background)" }}
+						>
+							<DesktopTab />
+							<main className="flex flex-col flex-1 overflow-x-hidden">
+								{children}
+							</main>
+						</div>
 					)}
 				</DeviceWrapper>
 			</body>

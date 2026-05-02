@@ -41,7 +41,6 @@ export function CircleOrnament({
 			className={className}
 			// style の transform を確実に適用させる
 			style={{
-				color: "var(--color-accent)",
 				display: "block", // 隙間防止
 			}}
 		>
