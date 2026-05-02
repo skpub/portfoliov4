@@ -19,11 +19,7 @@ type PageStrokeProps = HTMLAttributes<HTMLDivElement> & {
 	children: ReactNode;
 };
 
-export function PageStroke({
-	children,
-	className,
-	...props
-}: PageStrokeProps) {
+export function PageStroke({ children, className, ...props }: PageStrokeProps) {
 	return (
 		<div className={`relative overflow-hidden ${className ?? ""}`} {...props}>
 			{CORNERS_SHADOW.map(({ pos, flip }) => (
@@ -33,7 +29,7 @@ export function PageStroke({
 					className={`pointer-events-none absolute ${pos} w-20 h-20 overflow-hidden`}
 				>
 					<div className="w-40 h-40">
-						<CircleOrnament className="w-full h-full text-(--color-b-shadow)" />
+						<CircleOrnament className="w-full h-full text-b-shadow" />
 					</div>
 				</div>
 			))}

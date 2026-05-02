@@ -23,13 +23,7 @@ const { d, strokeWidth, strokeLinecap, strokeLinejoin } = (() => {
 	};
 })();
 
-export function CircleOrnament({
-	className,
-	style,
-}: {
-	className?: string;
-	style?: React.CSSProperties;
-}) {
+export function CircleOrnament({ className }: { className?: string }) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

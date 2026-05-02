@@ -17,7 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+	),
 	title: {
 		default: "佐藤海音",
 		template: "%s | 佐藤海音",
@@ -47,7 +49,7 @@ export default async function RootLayout({
 							className="flex flex-col min-h-screen"
 							style={{ backgroundColor: "var(--background)" }}
 						>
-							<main className="flex flex-col flex-1 overflow-x-hidden pb-[calc(8.5rem+env(safe-area-inset-bottom,0px))]">
+							<main className="flex flex-col flex-1 overflow-x-hidden pb-[calc(8.5rem+env(safe-area-inset-bottom,0))]">
 								{children}
 							</main>
 							<MobileTab />

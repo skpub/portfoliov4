@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useId } from "react";
 import { PageStroke } from "@/components/page-stroke";
 import face from "@/public/face.webp";
 import { SECTIONS } from "./sections";
@@ -23,7 +24,7 @@ export function ScrollSections() {
 	return (
 		<div className="flex flex-col">
 			<PageStroke
-				id="profile"
+				id={useId()}
 				className="flex min-h-[calc(100svh-4rem)] scroll-mt-20 flex-col items-center justify-center gap-5 px-8 py-20"
 			>
 				<div className="relative w-48 h-48 rounded-full overflow-hidden bg-stone-200">
