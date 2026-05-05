@@ -193,6 +193,36 @@ function HobbiesSection() {
 					))}
 				</div>
 			</ProfileRow>
+			<ProfileRow label="カメラ">
+				Nikon ZR を買った。色々撮り始める予定。プロフの写真も Nikon ZR
+				で撮ったもの。
+			</ProfileRow>
+			<ProfileRow label="音楽">
+				<p>
+					親のバンドの練習場で育ったので、特に器楽の素養はないが絶対音感があり、ある程度リアルタイムでアナライズ出来る。
+				</p>
+				<p>「今の B7(b9,b13)さぁ、(略)」</p>
+				<p>などと突然レビューを始めることがある。</p>
+			</ProfileRow>
+			<ProfileRow label="数学">
+				修士論文の結果は数列空間のpositive-corn (\ell^1(\Z)_+) 間の (和と
+				pointwise の積に関する)
+				スペクトル保存写像がそれぞれ形を決定できるというもの
+				(ただし前者の貢献は指導教員によるところが大きく、後者については私のオリジナルだが前者の結果を大いに参考にした上で特性関数に限定した結果であることに注意)。
+				これを完全に解いた上で、局所コンパクト群や順序 Banach
+				環に一般化出来ないか、と考えている最中。
+				私は勉強好きじゃなくて研究が好きなアイデアマンなので抽象調和解析詳しい人色々教えて。
+				特性関数に制限したところの結果を一般化するところの理論が作れたら、あとはギャップ少ないと思う。
+				非可換は、知らん。私の指導教員とその指導教員がなんかやっとる。
+			</ProfileRow>
+			<ProfileRow label="ファッション">
+				<p>
+					基本的に可愛いものが好きなのでレディースの服ばかり着ている。ただ一人でレディースのコーナーに入るのは気が引けるので女性の友人に選ぶのを手伝ってもらって買っている。柏の葉のららぽーとに行くといるかもしれない。
+				</p>
+				<p>たまにメンズの服を着て会社に行くと</p>
+				<p>「佐藤さんそういうのも着るんですね？」</p>
+				<p>と言われるようになった。逆だろ。</p>
+			</ProfileRow>
 		</dl>
 	);
 }
@@ -200,8 +230,30 @@ function HobbiesSection() {
 function WorksSection() {
 	return (
 		<dl className="space-y-4">
-			<ProfileRow label="準備中">
-				ここに製作物の内容を追加していきます。
+			<ProfileRow label="短歌共有サイト">
+				<p>
+					<a
+						className="text-accent underline"
+						href="https://github.com/skpub/tankas"
+					>
+						フロントエンド
+					</a>
+				</p>
+				<p>
+					<a
+						className="text-accent underline"
+						href="https://github.com/skpub/meigens-api"
+					>
+						バックエンド
+					</a>
+				</p>
+				OIDCもOAuth2もクリーンアーキテクチャも知らなかった時代に作ったSNSみたいなもの
+				これはフラーのインターン面接で見せるために meigens-api
+				(高専教員の名言を管理するための最悪な API)
+				の応用としてフロントだけ数日で作ったものの気がする。WebSocket
+				を用いてサーバ側から TL
+				の自動更新をかけるようになっているのがセールスポイント。あと何故か
+				SvelteKit で作られている。Next.js も触れるよ。
 			</ProfileRow>
 		</dl>
 	);
@@ -211,7 +263,7 @@ function BlogSection() {
 	return (
 		<dl className="space-y-4">
 			<ProfileRow label="準備中">
-				ここにブログの導線を追加していきます。
+				note に何か書いたらあとあと追記していくよ。
 			</ProfileRow>
 		</dl>
 	);
@@ -241,6 +293,8 @@ export function ScrollSections() {
 						新潟県新潟市西区(大学・大学院) → {"\n"}
 						千葉県柏市若柴(柏の葉)(オフィス近郊)
 					</ProfileRow>
+					<ProfileRow label="資格">応用情報技術者試験 (R1年秋)</ProfileRow>
+					<ProfileRow label="メール">satodeyannsu♡gmail.com</ProfileRow>
 				</dl>
 			</PageStroke>
 

@@ -21,7 +21,23 @@ type PageStrokeProps = HTMLAttributes<HTMLDivElement> & {
 
 export function PageStroke({ children, className, ...props }: PageStrokeProps) {
 	return (
-		<div className={`relative overflow-hidden ${className ?? ""}`} {...props}>
+		<div
+			className={`relative isolate overflow-hidden ${className ?? ""}`}
+			{...props}
+		>
+			<div
+				aria-hidden="true"
+				className="pointer-events-none absolute inset-0"
+				style={{
+					background: [
+						"radial-gradient(circle var(--corner-glow-radius) at top left, var(--corner-glow-core) 0, var(--corner-glow-mid) 38%, transparent 78%, transparent 100%)",
+						"radial-gradient(circle var(--corner-glow-radius) at top right, var(--corner-glow-core) 0, var(--corner-glow-mid) 38%, transparent 78%, transparent 100%)",
+						"radial-gradient(circle var(--corner-glow-radius) at bottom left, var(--corner-glow-core) 0, var(--corner-glow-mid) 38%, transparent 78%, transparent 100%)",
+						"radial-gradient(circle var(--corner-glow-radius) at bottom right, var(--corner-glow-core) 0, var(--corner-glow-mid) 38%, transparent 78%, transparent 100%)",
+					].join(", "),
+					mixBlendMode: "screen",
+				}}
+			/>
 			{CORNERS_SHADOW.map(({ pos, flip }) => (
 				<div
 					style={{ transform: flip, transformOrigin: "center" }}

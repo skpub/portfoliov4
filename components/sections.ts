@@ -19,9 +19,9 @@ export const SECTIONS = [
 	},
 	{
 		id: "blog",
-		label: "ブログ",
-		title: "Blog",
-		description: "記事やメモへの入り口。",
+		label: "note",
+		title: "Articles",
+		description: "note記事への入り口。",
 	},
 ] as const;
 

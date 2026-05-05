@@ -49,7 +49,7 @@ export default async function RootLayout({
 							className="flex flex-col min-h-screen"
 							style={{ backgroundColor: "var(--background)" }}
 						>
-							<main className="flex flex-col flex-1 overflow-x-hidden pb-[calc(8.5rem+env(safe-area-inset-bottom,0))]">
+							<main className="flex flex-col flex-1 overflow-x-hidden pb-[calc(7.5rem+env(safe-area-inset-bottom,0px))]">
 								{children}
 							</main>
 							<MobileTab />

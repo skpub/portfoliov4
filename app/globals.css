@@ -7,6 +7,9 @@
 	--color-b-weak: #ddded8;
 	--color-f-shadow: #aaa;
 	--color-b-shadow: #ddded8;
+	--corner-glow-core: rgb(255 250 235 / 58%);
+	--corner-glow-mid: rgb(255 250 235 / 26%);
+	--corner-glow-radius: clamp(7rem, 18vw, 15rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +20,12 @@
 		--background: #1a1c17;
 		--color-accent: #2d7a57;
 		--foreground: #ededed;
+		--corner-glow-core: color-mix(
+			in srgb,
+			var(--color-accent) 42%,
+			transparent
+		);
+		--corner-glow-mid: color-mix(in srgb, var(--color-accent) 18%, transparent);
 	}
 }
 
@@ -27,6 +36,7 @@
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 	--color-b-weak: var(--color-b-weak);
+	--color-accent: var(--color-accent);
 }
 
 p,
