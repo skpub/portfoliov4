@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	metadataBase: new URL(
-		process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+		process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sk-dev.org",
 	),
 	title: {
 		default: "佐藤海音",
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "佐藤海音",
 		description: "佐藤海音のポートフォリオ",
+		images: [{ url: "/face.webp", width: 1200, height: 630 }],
 	},
 };
 
