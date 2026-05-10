@@ -19,6 +19,9 @@
   "images": {
     "binding": "IMAGES"
   },
+  "vars": {
+    "ORIGIN": "https://www.sk-dev.org"
+  },
   "observability": {
     "enabled": true
   }

@@ -16,10 +16,11 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+const ORIGIN =
+	process.env.ORIGIN ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sk-dev.org";
+
 export const metadata: Metadata = {
-	metadataBase: new URL(
-		process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sk-dev.org",
-	),
+	metadataBase: new URL(ORIGIN),
 	title: {
 		default: "佐藤海音",
 		template: "%s | 佐藤海音",
