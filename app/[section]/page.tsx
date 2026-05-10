@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ScrollSections } from "@/components/scroll-sections";
 import { ScrollToSection } from "@/components/scroll-to-section";
 import { getSection, SECTIONS } from "@/components/sections";
+import { OPEN_GRAPH_IMAGE } from "@/lib/site-metadata";
 
 type SectionPageProps = {
 	params: Promise<{ section: string }>;
@@ -34,6 +35,7 @@ export async function generateMetadata({
 			title,
 			description: section.description,
 			url: `/${section.id}`,
+			images: [OPEN_GRAPH_IMAGE],
 		},
 	};
 }

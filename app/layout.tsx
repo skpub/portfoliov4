@@ -5,6 +5,7 @@ import { DesktopTab } from "@/components/desktop-tab";
 import { DeviceWrapper } from "@/components/device-wrapper";
 import { MobileTab } from "@/components/mobile-tab";
 import { getDevice } from "@/lib/server-device";
+import { OPEN_GRAPH_IMAGE, ORIGIN } from "@/lib/site-metadata";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -16,9 +17,6 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
-const ORIGIN =
-	process.env.ORIGIN ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sk-dev.org";
-
 export const metadata: Metadata = {
 	metadataBase: new URL(ORIGIN),
 	title: {
@@ -29,7 +27,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "佐藤海音",
 		description: "佐藤海音のポートフォリオ",
-		images: [{ url: "/face.webp", width: 1200, height: 630 }],
+		images: [OPEN_GRAPH_IMAGE],
 	},
 };
 
